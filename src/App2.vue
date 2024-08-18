@@ -1,3 +1,4 @@
+// Options api
 <script>
 export default {
   data(){
