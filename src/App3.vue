@@ -1,1 +1,1 @@
-<script setup>import Navbar from './components/Navbar.vue'import Hero from "@/components/Hero.vue";import HomeCards from "@/components/HomeCards.vue";import JobListing from "@/components/JobListings.vue";</script><template>  <Navbar />  <Hero />  <!--  <Hero title="Test title" subtitle="This is a test title" />-->  <HomeCards />  <JobListing :limit="3" :show-button="true"/></template>
+<script setup>import Navbar from './components/Navbar.vue'import {RouterView} from "vue-router";</script><template>  <Navbar />  <RouterView /></template>

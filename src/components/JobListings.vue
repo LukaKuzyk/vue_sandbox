@@ -5,8 +5,8 @@ import JobListingItem from "@/components/JobListingItem.vue";
 
 const jobs = ref(jobData);
 defineProps({
-  limit:Number,
-  showButton:{
+  limit: Number,
+  showButton: {
     type: Boolean,
     default: false
   }
@@ -20,7 +20,7 @@ defineProps({
         Browse Jobs
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <JobListingItem v-for="job in jobs.slice(0,limit || jobs.length)" :key="job.id" :job="job" />
+        <JobListingItem v-for="job in jobs.slice(0,limit || jobs.length)" :key="job.id" :job="job"/>
       </div>
     </div>
   </section>
@@ -29,8 +29,8 @@ defineProps({
     <a
         href="/jobs"
         class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-    >View All Jobs</a
-    >
+    >View All Jobs
+    </a>
   </section>
 
 </template>
