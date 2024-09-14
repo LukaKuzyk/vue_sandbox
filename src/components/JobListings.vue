@@ -1,10 +1,22 @@
 <script setup>
 import jobData from '@/jobs.json'
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 import JobListingItem from "@/components/JobListingItem.vue";
 import {RouterLink} from "vue-router";
+import axios from "axios";
 
-const jobs = ref(jobData);
+// const jobs = ref(jobData);
+const jobs = ref([]);
+
+onMounted(async () =>{
+  try {
+    const response = await axios.get('http://localhost:8000/jobs');
+    jobs.value = response.data;
+  }catch(error){
+    console.error('Error fetching jobs. ',error);
+  }
+})
+
 defineProps({
   limit: Number,
   showButton: {
